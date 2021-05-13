@@ -9,12 +9,16 @@
 <body>
     <h1>All Users</h1>
     {% for one_user in all_users %}
-        <p>First Name: {{one_user["first_name"]}}</p>
-        <p>Last Name: {{one_user["last_name"]}}</p>
-        <p>Email: {{one_user["email"]}}</p>
+        <p>First Name: {{ one_user['first_name'] }}</p>
+        <p>Last Name: {{ one_user["last_name"] }}</p>
+        <p>Email: {{ one_user["email"] }}</p>
+        <p>Created At: {{ one_user["created_at"] }}</p>
+        <p><a href="/users/{{ one_user['id'] }}">Show</a></p>
+        <p><a href="/users/{{ one_user['id'] }}/edit">Edit</a></p>
+        <p><a href="/users/{{ one_user['id'] }}/delete">Delete</a></p>
         <hr>
     {% endfor %}
 
-    <a href="/create">Create New User</a>
+    <a href="/users/new">Create New User</a>
 </body>
 </html>
